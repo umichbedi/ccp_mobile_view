@@ -1,71 +1,156 @@
-/* this is generic css for the whole website */
+html{
+  scroll-behavior: smooth;
+}
 
+body{
+  background-color: #f7db82;
+  /* change the background color here to a more aesthetic one */
+  font-size: 18px;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* this is the details about the h1 content  */
 h1{
-  font-size: 48px;
+  font-size: 50px;
   line-height: 1;
   padding: 50px 0;
   text-align: center;
 }
 
 
+/* this is the details about the h1 content  */
 h2{
   font-size: 32px;
-  line-height: 1.5;
+  line-height: 2;
 }
 
-.skip a {
-    background: white;
-    left: 0;
-    padding: 6px;
-    -webkit-transition: top 1s ease-out;
-    transition: top 1s ease-out;
-    z-index: 1;
-  }
-/* this is the css for the skip button borowed from my older cod but double check what is it used for */
-
-.skip a {
-    position: absolute;
-    top: -40px;
-  }
-
-  .skip a:focus {
-    top: 20px;
-  }
-
-  :focus {
-    outline: 2px solid black;
-  }
-
-
+/* top navigation is one line */
 nav li{
-    display:inline;
-    padding-left:20px;
-    padding-right:20px;
+  display:inline;
+  padding-right:20px;
+  padding-left:20px;
+
+}
+
+/*   */
+nav ul {
+  text-align: right;
+}
+
+/* top navigation is in black text styling */
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* adding an underline when links in the navigation are in the hover or focus state */
+nav a:hover,
+nav a:focus {
+  /* text-decoration: underline; */
+  border: 4px solid #333;
+}
+
+/* color behind the top navigation bar */
+nav{
+  background-color: #ddd;
+  padding: 25px 0;
+  text-align: left;
+}
+
+
+/* hiding the skio to main by default  */
+.skip a {
+  position: absolute;
+  top: -40px;
+}
+
+/* bringing the skip to main in focus */
+.skip a:focus {
+  top: 20px;
+}
+
+/* skip to main content button with white background */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+/* when a link is in focus, it will have a black outline */
+/* gb: Consider changing the outline color? */
+:focus {
+  outline: 2px solid black;
+}
+
+/* styling for the footer / match it with the top navigation bar */
+footer{
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+
+/* media queries for the reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
   }
 
-  nav a{
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+}
+
+
+
+/* ----- settings for the index / pet page ------ */
+/* config for the grid */
+.pet-columns {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Create two equal-width columns */
+  grid-column-gap: 20px; /* Add space between columns */
+  grid-row-gap: 50px; /* Add space between rows */
+}
+
+.active {
+  background-color: #9db733; /* Change the color to your preference */
+  color: #ffffff; /* Change the text color to your preference */
+}
+
+/* Add a box (border) around the .dogs and .cats sections */
+.dogs, .cats, .fish, .birds, .rodents {
+  width: calc(45%); /* Adjust width as needed, minus some margin */
+  border: 4px solid #333; /* You can customize the border style and color */
+  padding: 40px; /* Add padding inside the border */
+  margin: 0 auto; /* Add this line to center the container horizontally */
+  max-width: 1200px;
+  border-radius: 20px;
+  background-color: pink;
+
+
+  /* Ensure images resize and remain within the container */
+  .pet-image {
+    width: 100%;
+    height: auto;
+  /* max-height: 100%; */
+   /* Make the image responsive within the container */
+     /* Maintain the image's aspect ratio */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
   }
 
-  nav{
-    background-color: #ddd;
-    padding: 25px 0;
-    text-align: left;
-  }
+}
 
-
-  /* css for the default view */
-
-
-
-
-
-  /* css for the tablet view */
-
-
-
-
-
-  /* css for the desktop view */
+.rodents {
+    margin-bottom: 5opx; /* Adjust the value as needed to control the space */
+}
