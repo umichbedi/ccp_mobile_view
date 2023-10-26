@@ -1,0 +1,71 @@
+/* this is generic css for the whole website */
+
+h1{
+  font-size: 48px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.skip a {
+    background: white;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+/* this is the css for the skip button borowed from my older cod but double check what is it used for */
+
+.skip a {
+    position: absolute;
+    top: -40px;
+  }
+
+  .skip a:focus {
+    top: 20px;
+  }
+
+  :focus {
+    outline: 2px solid black;
+  }
+
+
+nav li{
+    display:inline;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  nav a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav{
+    background-color: #ddd;
+    padding: 25px 0;
+    text-align: left;
+  }
+
+
+  /* css for the default view */
+
+
+
+
+
+  /* css for the tablet view */
+
+
+
+
+
+  /* css for the desktop view */
